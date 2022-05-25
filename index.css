@@ -1,0 +1,287 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+/* 	background-image: url(https://iw233.cn/api.php?sort=mp); */
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	flex-direction: column;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+	background-color: #55aaff;
+	background-image: -webkit-linear-gradient(45deg,
+			rgba(255, 255, 255, 0.4) 25%,
+			transparent 25%,
+			transparent 50%,
+			rgba(255, 255, 255, 0.4) 50%,
+			rgba(255, 255, 255, 0.4) 75%,
+			transparent 75%,
+			transparent);
+	border-radius: 3em;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #ffffff;
+	border-radius: 3em;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 15px;
+}
+
+.body-box {
+		backdrop-filter: blur(10px);
+	padding:10px 50px;
+	border-radius: 15px;
+	overflow: hidden;
+	width: 60%;
+}
+
+.img-upload {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.upload-btnbox {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.fileinput-btn {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	width: 75px;
+	height: 25px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 24px;
+	vertical-align: center;
+	border: 1px solid #55aaff;
+	background-color: #55aaff;
+	margin: 5px;
+	color: #fff;
+	border-radius: 3px;
+}
+
+.fileinput-btn input {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	text-align: center;
+	display: flex;
+}
+
+@media screen and (max-width: 658px) {
+	.box-title {
+		font-size: 20px;
+	}
+
+	.body-box {
+		width: 100%;
+	}
+
+	#myCanvas {
+		width: 200px;
+		height: 200px;
+	}
+
+	#imageCanvas {
+		margin: 10px;
+	}
+
+	.tooltip .tooltiptext {
+		visibility: hidden;
+		width: 300px;
+		background-color: rgba(0, 0, 0, 0.9);
+		backdrop-filter: blur(10px);
+		color: #fff;
+		text-align: center;
+		border-radius: 6px;
+		padding: 15px;
+		left: -12.5px !important;
+		top: -70px;
+		position: absolute;
+
+	}
+}
+
+
+.bit-bar,
+.error-bar,
+.border-bar,
+.url-input {
+	margin: 10px auto;
+}
+
+.bar-title {
+	margin: 5px 0;
+}
+
+
+.url-input input {
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 5px;
+}
+
+.url-input input::placeholder {
+	color: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+	position: relative;
+
+}
+
+.vertical-center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+canvas {
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.slidecontainer {
+	width: 100%;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 25px;
+	border-radius: 5px;
+	background: rgba(0, 0, 0, 0.1);
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 5px;
+	background: #55aaff;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #55aaff;
+	cursor: pointer;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	margin: 5px 0;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 300px;
+	background-color: rgba(0, 0, 0, 0.9);
+	backdrop-filter: blur(10px);
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 15px;
+	left: 0;
+	top: -70px;
+	position: absolute;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+.center {
+	text-align: center;
+}
+
+.button-box {
+	display: flex;
+	margin: 10px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.create-button,
+.download-button {
+	transition: background 300ms, color 300ms, box-shadow 300ms;
+	background: transparent;
+	font-size: 15px;
+	color: #555555;
+	border: 0.5px solid rgba(0, 0, 0, 0.9);
+	-webkit-appearance: none;
+	box-sizing: border-box;
+	vertical-align: middle;
+	text-decoration: none;
+	padding: 10px 10px;
+	box-shadow: 0px 0px 0px 1px inset;
+	cursor: pointer;
+	outline: none;
+	border-width: 0;
+	border-radius: 6px;
+	margin: 15px !important;
+}
+
+.white-bg {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	text-align: center;
+}
+
+.create-button:hover,
+.download-button:hover {
+	background: #f7f7f7;
+	box-shadow: 0px 0px 0px 1px #f7f7f7 inset;
+}
+
+.box-title{
+	margin: 20px;
+}
+
+.footer {
+	width: 100%;
+	margin: 10px;
+	padding: 20px;
+}

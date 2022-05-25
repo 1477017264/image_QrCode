@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="index.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="icon" href="./images/favicon.ico" />
+		<meta charset="utf-8">
+		<meta content="webkit" name="renderer">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<meta content="width=device-width,initial-scale=1" name="viewport">
+	</head>
+
+	<title>在线生成二维码</title>
+	<body>
+		<div class="center">
+				<h3 class="box-title">在线生成带背景图片的二维码</h3>
+			</div>
+		<div class="body-box">
+			
+			<div class="img-upload">
+				<label class="upload-btnbox">
+					<label class="fileinput-btn">
+						<span class="upload-btn-text">选择图片</span>
+						<input type="file" id="imageLoader" class="upload-btn" name="imageLoader"
+							style="border: none;" />
+					</label>
+					<span>建议使用方形图片</span>
+				</label>
+
+				<div class="center">
+					<canvas id="imageCanvas"></canvas>
+				</div>
+			</div>
+
+			<div class="url-input">
+				<span style="margin: 5px 0;display: block;">输入信息: 必填</span>
+				<input class="w3-input" id="text" type="text" placeholder="请输入网址或文本" />
+			</div>
+			<div class="progress-bar">
+				<div class="bit-bar">
+					<div class="tooltip">
+						<span class="bar-title">点阵大小:</span>
+						<span class="tooltiptext">较大的尺寸会遮挡更多的图像，但更容易扫描，建议设置为30。</span>
+						<span id="printSize"></span>
+					</div>
+					<div class="slidecontainer">
+						<input type="range" min="10" max="100" value="30" class="slider" id="radiusSize" />
+					</div>
+				</div>
+
+				<div class="error-bar">
+					<div class="tooltip">
+						<span class="bar-title">纠错级别:</span>
+						<span class="tooltiptext">纠错级别越高生成的二维码越大，但可以让您在二维码隐藏更多信息。</span>
+						<span id="printCorrection"></span>
+					</div>
+					<div class="slidecontainer">
+						<input type="range" min="1" max="3" value="3" class="slider" id="errorCorrection" />
+					</div>
+				</div>
+
+				<div class="border-bar">
+					<div class="tooltip">
+						<span class="bar-title">边框尺寸:</span>
+						<span class="tooltiptext">二维码边框的宽度，默认为透明。</span>
+						<span id="printBorderSize"></span>
+					</div>
+					<div class="slidecontainer">
+						<input type="range" min="0" max="5" value="0" class="slider" id="borderSize" />
+					</div>
+					<div class="white-bg">
+						<input type="checkbox" id="whitebackground" name="whitebackground"
+							style="width: 17px;height: 17px;margin: 5px;margin-left: 0;" />
+						<label for="whitebackground">白色边框</label>
+					</div>
+
+				</div>
+			</div>
+			<div class="button-box">
+				<div class="create-qr">
+					<button class="create-button" style="margin: 0 auto" onclick="makeCode()">
+						生成二维码
+					</button>
+				</div>
+				<div class="download-qr">
+					<button class="download-button" style="margin: 0 auto;" onclick="download()">
+						下载二维码
+					</button>
+				</div>
+			</div>
+			<div class="center">
+				<canvas id="myCanvas"></canvas>
+			</div>
+
+		</div>
+		<div class="footer">
+			<div class="center">
+				<p>
+					请注意，生成的二维码可能不适用于所有二维码阅读器，因此请务必先对其进行测试。
+				</p>
+			</div>
+		</div>
+
+		<a id="link"></a>
+		<div id="qrcode" style="display: none"></div>
+		<script src="qrcode.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
