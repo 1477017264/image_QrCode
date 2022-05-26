@@ -15,7 +15,7 @@
 	<title>在线生成二维码</title>
 	<body>
 		<div class="center">
-				<h3 class="box-title">在线生成带背景图片的二维码</h3>
+				<h3 class="box-title" >在线生成带背景图片的二维码</h3>
 			</div>
 		<div class="body-box">
 			
@@ -24,12 +24,13 @@
 					<label class="fileinput-btn">
 						<span class="upload-btn-text">选择图片</span>
 						<input type="file" id="imageLoader" class="upload-btn" name="imageLoader"
-							style="border: none;" />
+							style="border: none;" accept="image/gif, image/jpg, image/png"/>
 					</label>
-					<span>建议使用方形图片</span>
+					<i class="iconfont" style="font-size: 20px;">&#xe609;</i>
+					<span class="upload-btn-text">建议使用方形图片</span>
 				</label>
 
-				<div class="center">
+				<div class="center-upload-img">
 					<canvas id="imageCanvas"></canvas>
 				</div>
 			</div>
@@ -71,9 +72,8 @@
 						<input type="range" min="0" max="5" value="0" class="slider" id="borderSize" />
 					</div>
 					<div class="white-bg">
-						<input type="checkbox" id="whitebackground" name="whitebackground"
-							style="width: 17px;height: 17px;margin: 5px;margin-left: 0;" />
-						<label for="whitebackground">白色边框</label>
+						<input type="checkbox" id="whitebackground" name="whitebackground" />
+						<label for="whitebackground">白色背景</label>
 					</div>
 
 				</div>
@@ -81,16 +81,16 @@
 			<div class="button-box">
 				<div class="create-qr">
 					<button class="create-button" style="margin: 0 auto" onclick="makeCode()">
-						生成二维码
+						<i class="iconfont" style="font-size: 15px;margin-right: 5px;">&#xed23;</i> 生成二维码
 					</button>
 				</div>
 				<div class="download-qr">
 					<button class="download-button" style="margin: 0 auto;" onclick="download()">
-						下载二维码
+						<i class="iconfont" style="font-size: 15px;margin-right: 5px;">&#xed25;</i> 下载二维码
 					</button>
 				</div>
 			</div>
-			<div class="center">
+			<div class="center-result">
 				<canvas id="myCanvas"></canvas>
 			</div>
 
@@ -98,6 +98,7 @@
 		<div class="footer">
 			<div class="center">
 				<p>
+				<i class="iconfont" style="font-size: 15px;margin-right: 5px;">&#xed19;</i>
 					请注意，生成的二维码可能不适用于所有二维码阅读器，因此请务必先对其进行测试。
 				</p>
 			</div>
